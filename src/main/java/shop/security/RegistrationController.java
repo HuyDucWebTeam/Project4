@@ -7,11 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import lombok.extern.slf4j.Slf4j;
 import shop.data.UserRepository;
 
+@Slf4j
 @Controller
 @RequestMapping("/register")
 public class RegistrationController {
+	
 	private UserRepository userRepo;
 	private PasswordEncoder passwordEncoder;
 	
@@ -28,6 +31,7 @@ public class RegistrationController {
 	
 	@PostMapping
 	public String processRegistration(RegistrationForm form) {
+		log.info("---Saving user...");
 		userRepo.save(form.toUser(passwordEncoder));
 		return "redirect:/login";
 	}
