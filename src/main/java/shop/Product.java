@@ -10,6 +10,7 @@ import javax.validation.constraints.NotBlank;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @Data
@@ -23,11 +24,14 @@ public class Product {
 	private Long id;
 
 	@NotBlank(message = "Code is required")
-	private final String code;
+	@NonNull
+	private String code;
 
 	@NotBlank(message = "Description is required")
-	private final String description;
+	@NonNull
+	private String description;
 	
 	@Digits(integer = 10, fraction = 2, message = "Invalid price")
-	private final float price;
+	@NonNull
+	private float price;
 }

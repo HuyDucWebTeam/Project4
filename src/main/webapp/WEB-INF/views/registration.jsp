@@ -30,8 +30,8 @@
 		<label for="city">City: </label>
 		<input type="text" name="city" id="city"/><br/>
 		
-		<label for="phone">Phone: </label>
-		<input type="text" name="phone" id="phone"/><br/>
+		<label for="phoneNumber">Phone: </label>
+		<input type="text" name="phoneNumber" id="phoneNumber"/><br/>
 		
 		<input type="submit" value="Register"/>
 	</form:form>
