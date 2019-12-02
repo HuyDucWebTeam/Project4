@@ -40,10 +40,10 @@
 
 	<script>
 		function update() {
-			document.getElementById('form_add').action = "/add"/>";
+			document.getElementById('form_add').action = "/add";
 		}
 		function view() {
-			document.getElementById('form_add').action = "/product"/>";
+			document.getElementById('form_add').action = "/product";
 		}
 	</script>
 
