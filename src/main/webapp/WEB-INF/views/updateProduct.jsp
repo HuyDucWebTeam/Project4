@@ -11,7 +11,7 @@
 
 	<h1>Product</h1>
 
-	<form:form id="form_add" method="POST">
+	<form:form id="form" method="POST">
 		<table cellspacing="0" border="0">
 			<input hidden="1" type="text" name="id" value="${param.id}">
 			<tr>
@@ -37,10 +37,11 @@
 
 	<script>
 		function update() {
-			document.getElementById('form_add').action = "/edit"/>";
+			document.getElementById('form').action = "/admin/edit"/>";
 		}
 		function view() {
-			document.getElementById('form_add').action = "/product"/>";
+			document.getElementById('form').action = "/admin/product"/>";
+			document.getElementById('form').method= "GET";
 		}
 	</script>
 </body>

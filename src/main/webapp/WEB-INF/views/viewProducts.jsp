@@ -15,8 +15,11 @@
 </head>
 <body>
 	<h1>Products</h1>
+	<form:form method="POST" action="/logout">
+		<input type="submit" value="Logout" />
+	</form:form>
 
-	<form:form action="/product" method="POST">
+	<form:form action="/admin/product" method="POST">
 		<table cellspacing="1" border="2">
 			<thead>
 				<td>Code</td>
@@ -31,9 +34,9 @@
 					<td>${product.code}</td>
 					<td>${product.description}</td>
 					<td>${product.price}</td>
-					<td><a href="/edit?id=${product.id}">Edit</a></td>
+					<td><a href="/admin/edit?id=${product.id}">Edit</a></td>
 					<td><a
-						href="/delete?id=${product.id}&code=${product.code}&description=${product.description}&price=${product.price}">Delete</a></td>
+						href="/admin/delete?id=${product.id}&code=${product.code}&description=${product.description}&price=${product.price}">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</table>

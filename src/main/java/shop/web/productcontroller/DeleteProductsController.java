@@ -1,4 +1,4 @@
-package shop.web;
+package shop.web.productcontroller;
 
 import javax.validation.Valid;
 
@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.extern.slf4j.Slf4j;
-import shop.Product;
 import shop.data.ProductRepository;
+import shop.entity.Product;
 
 @Slf4j
 @Controller
-@RequestMapping("/delete")
+@RequestMapping("/admin/delete")
 public class DeleteProductsController {
 	
 	private ProductRepository productRepo;
@@ -41,7 +41,7 @@ public class DeleteProductsController {
 		
 		productRepo.deleteById(product.getId());;
 		
-		return "redirect:/product";
+		return "redirect:/admin/product";
 	}
 	
 }

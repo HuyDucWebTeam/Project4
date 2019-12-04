@@ -16,7 +16,7 @@
 <body>
 	<h1>Product</h1>
 
-	<form:form id="form_add" method="POST">
+	<form:form id="form" method="POST">
 		<table cellspacing="0" border="0">
 			<tr>
 				<td align="right">Product Code:</td>
@@ -40,10 +40,11 @@
 
 	<script>
 		function update() {
-			document.getElementById('form_add').action = "/add";
+			document.getElementById('form').action = "/admin/add";
 		}
 		function view() {
-			document.getElementById('form_add').action = "/product";
+			document.getElementById('form').action = "/admin/product";
+			document.getElementById('form').method= "GET";
 		}
 	</script>
 

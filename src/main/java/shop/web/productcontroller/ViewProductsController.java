@@ -1,4 +1,4 @@
-package shop.web;
+package shop.web.productcontroller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import lombok.extern.slf4j.Slf4j;
-import shop.Product;
 import shop.data.ProductRepository;
+import shop.entity.Product;
 
 @Slf4j
 @Controller
-@RequestMapping("/product")
+@RequestMapping("/admin/product")
 public class ViewProductsController {
 	
 	private ProductRepository productRepo;
@@ -40,6 +40,6 @@ public class ViewProductsController {
 	@PostMapping
 	public String processAddProducts() {
 		log.info("---Processing add product...");
-		return "redirect:/add";
+		return "redirect:/admin/add";
 	}
 }

@@ -1,4 +1,4 @@
-package shop.web;
+package shop.web.productcontroller;
 
 import javax.validation.Valid;
 
@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import lombok.extern.slf4j.Slf4j;
-import shop.Product;
 import shop.data.ProductRepository;
+import shop.entity.Product;
 
 @Slf4j
 @Controller
-@RequestMapping("/add")
+@RequestMapping("/admin/add")
 @SessionAttributes("product")
 public class AddProductsController {
 	
@@ -44,6 +44,6 @@ public class AddProductsController {
 		productRepo.save(product);
 		sessionStatus.setComplete();
 		
-		return "redirect:/product";
+		return "redirect:/admin/product";
 	}
 }

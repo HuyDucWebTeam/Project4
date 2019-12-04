@@ -6,12 +6,19 @@
 <html lang="en">
 <head>
 
-<title>User</title>
+<title>Admin</title>
 
 </head>
 <body>
-	<h1>Users</h1>
-
+	<h1>Admin Page</h1>
+	<form:form method="GET" action = "/admin/product">
+		<input type="submit" value = "View Products">
+	</form:form>
+	
+	<form:form method="GET" action = "/admin/user">
+		<input type="submit" value = "View Users">
+	</form:form>
+	
 	<form:form method="POST" action="/logout">
 		<input type="submit" value="Logout" />
 	</form:form>

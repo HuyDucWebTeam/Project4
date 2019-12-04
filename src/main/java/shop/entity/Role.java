@@ -1,11 +1,13 @@
-package shop;
+package shop.entity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.OneToMany;
 
 import lombok.AccessLevel;
 import lombok.Data;
@@ -13,25 +15,22 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
-@Data
-@RequiredArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 @Entity
-public class Product {
-
+@Data
+@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
+@RequiredArgsConstructor
+public class Role {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
-	@NotBlank(message = "Code is required")
+	
 	@NonNull
-	private String code;
-
-	@NotBlank(message = "Description is required")
+	private String name;
+	
 	@NonNull
 	private String description;
 	
-	@Digits(integer = 10, fraction = 2, message = "Invalid price")
-	@NonNull
-	private float price;
+	@OneToMany(mappedBy = "role")
+	private List<User> users = new ArrayList<>();
 }

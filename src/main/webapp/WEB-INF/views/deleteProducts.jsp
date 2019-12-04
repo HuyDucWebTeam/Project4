@@ -12,7 +12,7 @@
 	<h1 style="font-weight: bold">Are you sure you want to delete this
 		product?</h1>
 
-	<form:form id="form_delete" method="POST">
+	<form:form id="form" method="POST">
 		<table cellspaceing="2" border="0">
 			<input hidden="1" type="text" name="id" value="${param.id}">
 			<input hidden="1" type="text" name="code" value="${param.code}">
@@ -40,10 +40,11 @@
 
 	<script>
 		function yes() {
-			document.getElementById('form_delete').action = "/delete";
+			document.getElementById('form').action = "/admin/delete";
 		}
 		function no() {
-			document.getElementById('form_delete').action = "/product";
+			document.getElementById('form').action = "/admin/product";
+			document.getElementById('form').method= "GET";
 		}
 	</script>
 </body>

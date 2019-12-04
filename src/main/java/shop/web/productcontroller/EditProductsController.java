@@ -1,6 +1,4 @@
-package shop.web;
-
-import java.util.Optional;
+package shop.web.productcontroller;
 
 import javax.validation.Valid;
 
@@ -11,12 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import lombok.extern.slf4j.Slf4j;
-import shop.Product;
 import shop.data.ProductRepository;
+import shop.entity.Product;
 
 @Slf4j
 @Controller
-@RequestMapping("/edit")
+@RequestMapping("/admin/edit")
 public class EditProductsController {
 	
 	private ProductRepository productRepo;
@@ -28,7 +26,7 @@ public class EditProductsController {
 	
 	@GetMapping
 	public String showEditForm() {
-		return "editProducts";
+		return "updateProduct";
 	}
 	
 	@PostMapping
@@ -37,7 +35,7 @@ public class EditProductsController {
 		log.info("---Saving edited product: " + product.toString());
 		
 		if(errors.hasErrors()) {
-			return "editProducts";
+			return "updateProduct";
 		}
 		
 		Product newProduct = productRepo.findById(product.getId()).get();
@@ -48,6 +46,6 @@ public class EditProductsController {
 		
 		productRepo.save(newProduct);
 		
-		return "redirect:/product";
+		return "redirect:/admin/product";
 	}
 }

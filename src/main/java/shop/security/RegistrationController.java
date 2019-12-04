@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.extern.slf4j.Slf4j;
+import shop.data.RoleRepository;
 import shop.data.UserRepository;
 
 @Slf4j
@@ -16,11 +17,13 @@ import shop.data.UserRepository;
 public class RegistrationController {
 	
 	private UserRepository userRepo;
+	private RoleRepository roleRepo;
 	private PasswordEncoder passwordEncoder;
 	
 	@Autowired
-	public RegistrationController(UserRepository userRepo, PasswordEncoder passwordEncoder) {
+	public RegistrationController(UserRepository userRepo, RoleRepository roleRepo, PasswordEncoder passwordEncoder) {
 		this.userRepo = userRepo;
+		this.roleRepo = roleRepo;
 		this.passwordEncoder = passwordEncoder;
 	}
 	
@@ -31,8 +34,8 @@ public class RegistrationController {
 	
 	@PostMapping
 	public String processRegistration(RegistrationForm form) {
-		log.info("---Saving user...");
-		userRepo.save(form.toUser(passwordEncoder));
+		log.info("---Saving user: " + form);
+		userRepo.save(form.toUser(passwordEncoder, roleRepo));
 		return "redirect:/login";
 	}
 }

@@ -33,6 +33,8 @@
 		<label for="phoneNumber">Phone: </label>
 		<input type="text" name="phoneNumber" id="phoneNumber"/><br/>
 		
+		<input hidden="1" type="text" name="roleName" value="USER">
+		
 		<input type="submit" value="Register"/>
 	</form:form>
 

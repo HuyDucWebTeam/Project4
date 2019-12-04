@@ -35,7 +35,7 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler {
 		Set<GrantedAuthority> grantedAuthorities = authentication.getAuthorities().stream().collect(Collectors.toSet());
 
 		if (isAdmin(grantedAuthorities)) {
-			url = "/product";
+			url = "/admin";
 		} else if (isUser(grantedAuthorities)) {
 			url = "/user";
 		}
