@@ -12,7 +12,6 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 <style type="text/css">
-<<<<<<< HEAD
 	.item {
 		width: 250px; 
 		background-color: #DCDDE6; 
@@ -25,19 +24,6 @@
 		width:100px;
 		height:100px;
 	}
-=======
-.item {
-	width: 250px;
-	background-color: #DCDDE6;
-	text-align: center;
-}
-
-.img {
-	margin-top: 10px;
-	width: 100px;
-	height: 100px;
-}
->>>>>>> 8ee969900f1bfbe1f54f345326ee43a5b1371bd2
 </style>
 
 </head>
@@ -55,7 +41,6 @@
 
 	<br>
 	<div class="row">
-<<<<<<< HEAD
   		<c:forEach items="${items}" var="item">
   			<div class="col-sm-3" style="margin-top: 20px; margin-bottom: 20px">
   				<div class="item">
@@ -76,7 +61,6 @@
   			</div>
   		</c:forEach>
   	</div>
-=======
 		<c:forEach items="${items}" var="item">
 			<div class="col-sm-3" style="margin-top: 20px; margin-bottom: 20px">
 				<div class="item">
@@ -95,6 +79,5 @@
 			</div>
 		</c:forEach>
 	</div>
->>>>>>> 8ee969900f1bfbe1f54f345326ee43a5b1371bd2
 </body>
 </html>
