@@ -21,7 +21,7 @@ public class AgricultureShopApplication implements WebMvcConfigurer{
 
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/").setViewName("redirect:/admin/product");
+		registry.addViewController("/").setViewName("redirect:/login");
 		registry.addViewController("/login");
 	}
 	

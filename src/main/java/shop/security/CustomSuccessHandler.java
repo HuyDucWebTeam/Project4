@@ -37,7 +37,7 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler {
 		if (isAdmin(grantedAuthorities)) {
 			url = "/admin";
 		} else if (isUser(grantedAuthorities)) {
-			url = "/user";
+			url = "/user/viewItems";
 		}
 
 		return url;
