@@ -10,8 +10,6 @@ import javax.validation.constraints.NotBlank;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 
 @Data
 @NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
@@ -42,4 +40,5 @@ public class Product {
 		this.price = price;
 		this.urlImg = urlImg;
 	}
+
 }
