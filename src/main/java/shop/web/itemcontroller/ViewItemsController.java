@@ -3,6 +3,7 @@ package shop.web.itemcontroller;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -32,11 +33,11 @@ public class ViewItemsController {
 	@GetMapping
 	public String showItems(Model model, @AuthenticationPrincipal User user) {
 		log.info("---Finding products...");
+		log.info("---user:" + user.getId());
 		List<Product> items = new ArrayList<>();
 		productRepo.findAll().forEach(i -> items.add(i));
 		
 		model.addAttribute("items", items);
-
 		return "viewItems";
 	}
 	
