@@ -34,4 +34,7 @@ public class Product {
 	@Digits(integer = 10, fraction = 2, message = "Invalid price")
 	@NonNull
 	private float price;
+	
+	@NonNull
+	private String urlImg;
 }

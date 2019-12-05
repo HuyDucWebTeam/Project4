@@ -11,7 +11,9 @@
 </head>
 <body>
 	<h1>Users</h1>
-
+	<form:form method="GET" action="/user/viewItems">
+		<input type="submit" value="View items">
+	</form:form>
 	<form:form method="POST" action="/logout">
 		<input type="submit" value="Logout" />
 	</form:form>
