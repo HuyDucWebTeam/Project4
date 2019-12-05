@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,19 +19,22 @@ import lombok.RequiredArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
-@RequiredArgsConstructor
 public class Role {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@NonNull
 	private String name;
 	
-	@NonNull
 	private String description;
 	
-	@OneToMany(mappedBy = "role")
+	@OneToMany(targetEntity = User.class)
 	private List<User> users = new ArrayList<>();
+
+	public Role(String name, String description) {
+		super();
+		this.name = name;
+		this.description = description;
+	}
 }

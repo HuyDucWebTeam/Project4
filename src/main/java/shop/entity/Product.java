@@ -14,7 +14,6 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@RequiredArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 @Entity
 public class Product {
@@ -24,17 +23,23 @@ public class Product {
 	private Long id;
 
 	@NotBlank(message = "Code is required")
-	@NonNull
 	private String code;
 
 	@NotBlank(message = "Description is required")
-	@NonNull
 	private String description;
-	
+
 	@Digits(integer = 10, fraction = 2, message = "Invalid price")
-	@NonNull
 	private float price;
-	
-	@NonNull
+
 	private String urlImg;
+
+	public Product(@NotBlank(message = "Code is required") String code,
+			@NotBlank(message = "Description is required") String description,
+			@Digits(integer = 10, fraction = 2, message = "Invalid price") float price, String urlImg) {
+		super();
+		this.code = code;
+		this.description = description;
+		this.price = price;
+		this.urlImg = urlImg;
+	}
 }
