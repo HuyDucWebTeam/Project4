@@ -37,6 +37,11 @@
 		</div>
 		<div class="col-sm-3"></div>
 		<div class="col-sm-3"></div>
+		<div class="col-sm-3" align="right">
+			<form:form method="POST" action="/logout">
+				<input class="btn btn-primary"type="submit" value="Logout" />
+			</form:form>
+		</div>
 	</div>
 
 	<br>
