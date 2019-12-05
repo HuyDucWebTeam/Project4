@@ -6,7 +6,11 @@
 <meta charset="UTF-8">
 <title>Cart</title>
 </head>
-<body>
-	<p>THIS IS A CART</p>
+<body class="container">
+	<h3 align="center">CART</h3>
+	<div class="row">
+		<p>${itemInCart}</p>
+		<p>${id_user}</p>
+	</div>
 </body>
 </html>
